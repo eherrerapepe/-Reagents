@@ -1,2 +1,23 @@
-// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import url(https://fonts.googleapis.com/css?family=Lato);
+$font-family-sans-serif: 'Lato', sans-serif;
+@import "node_modules/bootstrap/scss/bootstrap.scss";
+@import "custom_color";
+
+*
+{
+  border-radius: 0 !important;
+}
+.bg-white {
+  background-color: $white;
+}
+
+body{
+  background-color: $primary-color;
+}
+
+.container-left-login
+{
+  background: url("../img/bg-login-left.jpg");
+  background-size: cover;
+}
 

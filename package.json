@@ -5,8 +5,10 @@
     "dev": "gulp watch"
   },
   "devDependencies": {
+    "bootstrap": "^4.0.0-alpha.6",
     "gulp": "^3.9.1",
+    "jquery": "*",
     "laravel-elixir": "^5.0.0",
-    "bootstrap-sass": "^3.0.0"
+    "tether": "^1.4.0"
   }
 }
