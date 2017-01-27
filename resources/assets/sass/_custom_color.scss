@@ -1,4 +1,26 @@
-$primary-color: #3498DB;
+$primary-color: #2C3E50;
 $secondary-color: #E74C3C;
-$grey: #ECF0F1;
+$grey: #fcfcfc;
 $white: #ffffff;
+$black: #000000;
+
+
+//Colores de texto
+.text-secondary
+{
+  color: $secondary-color;
+}
+.text-grey
+{
+  color: $grey;
+}
+
+//Colores de backgroud
+.background-primary
+{
+  background-color: $primary-color;
+}
+.background-secondary
+{
+  background-color: $secondary-color;
+}

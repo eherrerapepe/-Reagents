@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="reagent_app">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+    <title>Reagents</title>
 
     <!-- Fonts for icons-->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <!-- Styles -->
     <link href="{{ elixir('assets/css/app.css') }}" rel="stylesheet">
 </head>
-<body>
+<body @if(Auth::user()) class="body-color-in" @else class="body-color-out" @endif ng-controller="main_ctrl">
 {{--
     <nav class="navbar navbar-default navbar-static-top">
         <div class="container">
@@ -61,7 +61,24 @@
     </nav>
     --}}
 
-    @yield('content')
+    <div class="container-fluid p-0">
+        <div class="row no-gutters">
+            @if(Auth::user())
+            <div class="col-md-1 col-lg-3 col-xl-2 hidden-sm-down container-main-nav">
+                @include('partials.main_nav')       {{-- Contiene las diferentes opciones del menu dependiendo del tipo de usuario --}}
+            </div>
+            @endif
+            <div class="col @if(Auth::user()) offset-md-1 offset-lg-3 offset-xl-2 @endif container-main-content ">
+                @if(Auth::user())
+                    @include('partials.secondary_nav')  {{-- Contiene iconos de notificacion edicion de perfil y cerrar sesión --}}
+                @endif
+                @yield('content')
+            </div>
+        </div>
+    </div>
+
+    <!-- Librerias -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
 
     <!-- JavaScripts -->
     <script src="{{ elixir('assets/js/app.js') }}"></script>

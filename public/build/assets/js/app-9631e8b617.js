@@ -15577,6 +15577,15 @@ window.Tether = require('tether');
 window.$ = window.jQuery = require('jquery');
 require('bootstrap');
 
-},{"bootstrap":1,"jquery":2,"tether":3}]},{},[4]);
+},{"bootstrap":1,"jquery":2,"tether":3}],5:[function(require,module,exports){
+'use strict';
+
+angular.module('reagent_app', []).controller('main_ctrl', ['$scope', function ($scope) {}])
+//Controlador para el apartado de reactivos
+.controller('reagents_ctrl', ['$scope', function ($scope) {
+    $scope.text = "Un nuevo mundo en la programación";
+}]);
+
+},{}]},{},[4,5]);
 
 //# sourceMappingURL=app.js.map

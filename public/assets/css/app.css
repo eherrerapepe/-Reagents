@@ -6375,17 +6375,88 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
   .hidden-print {
     display: none !important; } }
 
+.text-secondary {
+  color: #E74C3C; }
+
+.text-grey {
+  color: #fcfcfc; }
+
+.background-primary {
+  background-color: #2C3E50; }
+
+.background-secondary {
+  background-color: #E74C3C; }
+
 * {
   border-radius: 0 !important; }
 
 .bg-white {
   background-color: #ffffff; }
 
-body {
-  background-color: #3498DB; }
+.body-color-out {
+  background-color: dodgerblue; }
+
+.body-color-in {
+  background-color: #fcfcfc; }
 
 .container-left-login {
   background: url("../img/bg-login-left.jpg");
   background-size: cover; }
+
+/*
+- ESTILOS GENERALES
+ */
+.text-tiny {
+  font-size: small; }
+
+/*
+- ESTILOS PARA MAIN NAV
+*/
+.container-main-nav {
+  background-color: #2C3E50;
+  position: fixed;
+  height: 100% !important; }
+
+.container-item-nav .dropdown-item {
+  padding-top: 13px;
+  padding-bottom: 13px;
+  color: #ffffff; }
+  .container-item-nav .dropdown-item:hover {
+    background-color: #E74C3C;
+    color: #fcfcfc; }
+
+.container-item-nav .active {
+  background-color: #E74C3C; }
+
+/*
+- ESTILOS PARA REAGENTS MAIN MENU
+ */
+.container-reagents-main {
+  padding-left: 15px !important;
+  padding-right: 15px !important; }
+
+.container-reagents-img {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  background-color: #ed7669; }
+  .container-reagents-img .text-first {
+    position: relative;
+    top: -10px;
+    left: -20px;
+    transform: rotate(-45deg);
+    font-size: 220px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.3); }
+  .container-reagents-img .text-end {
+    position: relative;
+    top: -300px;
+    transform: rotate(-65deg);
+    font-size: 200px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.3); }
+
+.content-nav-reagents .dropdown-toggle::after {
+  display: none !important; }
 
 /*# sourceMappingURL=app.css.map */

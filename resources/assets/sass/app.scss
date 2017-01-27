@@ -11,13 +11,89 @@ $font-family-sans-serif: 'Lato', sans-serif;
   background-color: $white;
 }
 
-body{
-  background-color: $primary-color;
+.body-color-out{
+  background-color: dodgerblue;
 }
+.body-color-in{
+   background-color: $grey;
+ }
 
 .container-left-login
 {
   background: url("../img/bg-login-left.jpg");
   background-size: cover;
 }
+/*
+- ESTILOS GENERALES
+ */
+.text-tiny
+{
+  font-size: small;
+}
 
+/*
+- ESTILOS PARA MAIN NAV
+*/
+.container-main-nav
+{
+  background-color: $primary-color;
+  position: fixed;
+  height: 100% !important;
+}
+.container-item-nav
+{
+  .dropdown-item
+  {
+    padding-top: 13px;
+    padding-bottom: 13px;
+    color: $white;
+    &:hover
+    {
+      background-color: $secondary-color;
+      color: $grey;
+    }
+  }
+  .active
+  {
+    background-color: $secondary-color;
+  }
+}
+
+/*
+- ESTILOS PARA REAGENTS MAIN MENU
+ */
+.container-reagents-main
+{
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+}
+.container-reagents-img
+{
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  background-color: lighten($secondary-color, 10);
+  .text-first{
+    position: relative;
+    top: -10px;
+    left: -20px;
+    transform: rotate(-45deg);
+    font-size: 220px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.3);
+  }
+  .text-end{
+    position: relative;
+    top: -300px;
+    transform: rotate(-65deg);
+    font-size: 200px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.3);
+  }
+}
+.content-nav-reagents
+{
+  .dropdown-toggle::after {
+    display: none !important;
+  }
+}
