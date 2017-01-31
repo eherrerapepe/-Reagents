@@ -18,5 +18,8 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/', ['as'=>'admin','uses'=>'HomeController@index']); //- Inicio
 
-    Route::get('Reagents',['as'=>'reagents', 'uses'=>'ReagentController@index']); //- Reagents
+    Route::get('Reagents',['as'=>'reagents', 'uses'=>'ReagentController@index']); //- Reagents - HOME
+    Route::get('ReagentsCreate',['as'=>'reagents_create','uses'=>'ReagentController@create']); //- Reagents - FORM CREATE
+
+    Route::get('Subjects',['as'=>'subjects','uses'=>'SubjectController@index']); //- Asignaturas - HOME
 });

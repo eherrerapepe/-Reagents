@@ -69,24 +69,24 @@ $font-family-sans-serif: 'Lato', sans-serif;
 }
 .container-reagents-img
 {
-  width: 150px;
-  height: 150px;
+  width: 50px;
+  height: 50px;
   overflow: hidden;
   background-color: lighten($secondary-color, 10);
   .text-first{
     position: relative;
     top: -10px;
-    left: -20px;
+    left: -15px;
     transform: rotate(-45deg);
-    font-size: 220px;
+    font-size: 90px;
     font-weight: bold;
     color: rgba(255, 255, 255, 0.3);
   }
   .text-end{
     position: relative;
-    top: -300px;
+    top: -130px;
     transform: rotate(-65deg);
-    font-size: 200px;
+    font-size: 55px;
     font-weight: bold;
     color: rgba(255, 255, 255, 0.3);
   }

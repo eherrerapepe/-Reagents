@@ -23,7 +23,7 @@
                 <i class="fa fa-folder-open fa-2x" aria-hidden="true"></i> <span class="hidden-md-down pl-lg-3 pl-md-2"> Reactivos</span>
             </a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">
+            <a class="dropdown-item" href="{{ route('subjects') }}">
                 <i class="fa fa-black-tie fa-2x" aria-hidden="true"></i> <span class="hidden-md-down pl-lg-3 pl-md-2"> Materias</span>
             </a>
             <div class="dropdown-divider"></div>

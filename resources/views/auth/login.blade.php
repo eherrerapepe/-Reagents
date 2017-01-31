@@ -7,7 +7,11 @@
                 <div class="row">
 
                     <div class="col-12 col-md-6 text-center align-self-center pt-4 pt-md-0">
-                        <i class="fa fa-google-wallet fa-4x" aria-hidden="true"></i>
+                        <div class="row">
+                            <div class="col-4 offset-4">
+                                <img src="{{ asset('assets/img/logo.svg') }}" alt="REAGENTS">
+                            </div>
+                        </div>
                         <p><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</small></p>
                     </div>
 

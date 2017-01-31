@@ -13,4 +13,9 @@ class ReagentController extends Controller
     {
         return view('reagents');
     }
+    //Metodo que muestra el formulario de registro de un nuevo reactivo
+    public function create()
+    {
+        return view('partials.reagents.reagents_create');
+    }
 }

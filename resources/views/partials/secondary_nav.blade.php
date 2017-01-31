@@ -13,7 +13,12 @@
         </div>
         <div class="hidden-sm-down">
             <div class="row align-items-center">
-                <div class="col-4 text-white">Logo SVG</div>
+                <div class="col-1 text-white">
+                    <img src="{{ asset('assets/img/logo.svg') }}" alt="REAGENTS">
+                </div>
+                <div class="col-auto">
+                    <h2 class="text-white mb-0">AppName</h2>
+                </div>
                 <div class="col">
                     <ul class="nav float-right">
                         <li class="nav-item">
