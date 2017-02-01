@@ -23,4 +23,10 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    //Relacion con la tabla materias
+    public function getSubjects()
+    {
+        return $this->hasMany('App\Subject');
+    }
 }

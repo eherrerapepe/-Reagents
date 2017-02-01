@@ -9,9 +9,14 @@ class Subject extends Model
     protected $table = 'subjects';
     protected $fillable = ['subject','detail','color','state','user_id'];
 
-    //Relaciones entre tablas
-    public function getSubjects()
+    //Relacion con la tabla de reactivos
+    public function getReagents()
     {
         return $this->hasMany('App\Reagent');
+    }
+    //Relacion con la tabla user
+    public function getUser()
+    {
+        $this->belongsTo('App\User');
     }
 }

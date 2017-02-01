@@ -6381,6 +6381,9 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
 .text-grey {
   color: #fcfcfc; }
 
+.text-disabled {
+  color: #b0b0b0; }
+
 .background-primary {
   background-color: #2C3E50; }
 

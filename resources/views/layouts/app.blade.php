@@ -88,7 +88,8 @@
     </div>
 
     <!-- Librerias -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
+    <script src="{{ asset('assets/js/angular.min.js') }}"></script>
+    <script src="{{ asset('assets/js/ngStorage.min.js') }}"></script>
 
     <!-- JavaScripts -->
     <script src="{{ elixir('assets/js/app.js') }}"></script>

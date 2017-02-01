@@ -10,7 +10,7 @@ class Reagent extends Model
     protected $fillable = ['name_reagents','state_reagents','subject_id'];
 
     //Relación con la tabla subjects
-    public function getReagents()
+    public function getSubject()
     {
         return $this->belongsTo('App\Subject');
     }
