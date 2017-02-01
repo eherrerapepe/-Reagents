@@ -72,6 +72,16 @@
                 @if(Auth::user())
                     @include('partials.secondary_nav')  {{-- Contiene iconos de notificacion edicion de perfil y cerrar sesión --}}
                 @endif
+
+                {{-- Mensajes de alerta --}}
+                    @if(Session::has('message'))
+                        <div class="alert alert-info alert-dismissible fade show" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <strong>{{ Session::get('message') }}</strong>
+                        </div>
+                    @endif
                 @yield('content')
             </div>
         </div>
@@ -82,5 +92,6 @@
 
     <!-- JavaScripts -->
     <script src="{{ elixir('assets/js/app.js') }}"></script>
+    <script src="{{ asset('assets/js/logic_app.js') }}"></script>
 </body>
 </html>

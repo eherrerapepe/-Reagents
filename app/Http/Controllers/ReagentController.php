@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Reagent;
+use App\Subject;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -17,5 +19,12 @@ class ReagentController extends Controller
     public function create()
     {
         return view('partials.reagents.reagents_create');
+    }
+    //Metodo que obtiene los reactivos y envia en formato json
+    public function getReagents()
+    {
+        //Consultamos las materias
+        $data = Reagent::find(1)->getReagents;
+        dd($data);
     }
 }

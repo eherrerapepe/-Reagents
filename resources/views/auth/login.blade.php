@@ -31,8 +31,8 @@
                                         <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" value="{{ old('email') }}" placeholder="E-mail de usuario">
                                         @if ($errors->has('email'))
                                             <span class="help-block">
-                                        <small id="emailHelp" class="form-text text-danger">{{ $errors->first('email') }}</small>
-                                    </span>
+                                                <small id="emailHelp" class="form-text text-danger">{{ $errors->first('email') }}</small>
+                                            </span>
                                         @endif
                                     </div>
 
@@ -41,8 +41,8 @@
                                         <input id="password" type="password" class="form-control" name="password" aria-describedby="passHelp" placeholder="Ingrese su contraseña">
                                         @if ($errors->has('password'))
                                             <span class="help-block">
-                                        <small id="passHelp" class="form-text text-danger">{{ $errors->first('password') }}</small>
-                                    </span>
+                                                <small id="passHelp" class="form-text text-danger">{{ $errors->first('password') }}</small>
+                                            </span>
                                         @endif
                                     </div>
                                     <div class="form-group">

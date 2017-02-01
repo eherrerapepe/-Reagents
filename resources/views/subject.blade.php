@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container-fluid" ng-controller="reagents_ctrl">
+    <div class="container-fluid" ng-controller="subject_ctrl">
         <div class="row justify-content-center">
             <div class="col-12 col-md-11 pt-3">
 
@@ -30,7 +30,7 @@
                 <div class="row container-reagents-main">
                     <div class="col-12 col-md-7">
                         <div class="row bg-white p-2">
-                            <div class="col">
+                            <div ng-show="subjectsRegister != 0" class="col">
                                 <table class="table table-striped table-responsive">
                                     <thead>
                                     <tr>
@@ -41,51 +41,70 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr>
-                                        <th class="hidden-md-down" scope="row">
-                                            <div class="col-auto p-2 hidden-sm-down container-reagents-img">
-                                                <h1 class="text-first">B</h1>
-                                                <h1 class="text-end">D</h1>
-                                            </div>
-                                        </th>
-                                        <td>
-                                            Base de datos
-                                        </td>
-                                        <td>
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                        </td>
-                                        <td>
-                                            <div class="btn-group btn-group-sm btn-group-vertical" role="group" aria-label="Basic example">
-                                                <button type="button" class="btn btn-info">Editar</button>
-                                                <button type="button" class="btn btn-info">Eliminar</button>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                        <tr ng-repeat="subject in subjects">
+                                            <th class="hidden-md-down" scope="row">
+                                                <div class="col-auto p-2 hidden-sm-down container-reagents-img">
+                                                    <h1 class="text-first">B</h1>
+                                                    <h1 class="text-end">D</h1>
+                                                </div>
+                                            </th>
+                                            <td>
+                                                @{{ subject.subject }}
+                                            </td>
+                                            <td>
+                                                @{{ subject.detail }}
+                                            </td>
+                                            <td>
+                                                <div class="btn-group btn-group-vertical" role="group" aria-label="Basic example">
+                                                    <button type="button" class="btn btn-info btn-sm">Editar</button>
+                                                    <form action="{{ route('update_subjects') }}" method="post">
+                                                        {{ csrf_field() }}
+                                                        <input type="hidden" value="@{{ subject.id }}" name="id_subject">
+                                                        <button type="submit" class="btn btn-info btn-sm">Eliminar</button>
+                                                    </form>
+                                                </div>
+                                            </td>
+                                        </tr>
                                     </tbody>
                                 </table>
+                            </div>
+                            <div ng-hide="subjectsRegister != 0" class="col">
+                                <div class="alert alert-info" role="alert">
+                                    <strong>No hay asiganaturas registradas</strong>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-12 col-md-5">
                         <div class="row bg-white p-2 ml-md-2">
                             <div class="col">
-                                <form action="">
+                                <form action="{{ route('save_subjects') }}" method="post">
                                     <fieldset>
                                         <legend>Registrar nueva asignatura</legend>
                                         <div class="dropdown-divider"></div>
                                         {{ csrf_field() }}
-                                        <div class="form-group">
-                                            <label for="name">Asignatura</label>
-                                            <input type="text" id="name" class="form-control">
+                                        <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
+
+                                        <div class="form-group {{ $errors->has('subject') ? 'has-danger' : '' }}">
+                                            <label for="name" class="{{ $errors->has('subject') ? 'col-form-label' : '' }}">Asignatura</label>
+                                            <input type="text" id="name" class="form-control" name="subject">
+                                            @if ($errors->has('subject'))
+                                                <span class="help-block">
+                                                <small id="emailHelp" class="form-text text-danger">{{ $errors->first('subject') }}</small>
+                                            </span>
+                                            @endif
                                         </div>
-                                        <div class="form-group">
-                                            <label for="detail">Descripción (opcional)</label>
-                                            <textarea class="form-control" id="detail" rows="3"></textarea>
+
+                                        <div class="form-group {{ $errors->has('detail') ? 'has-danger' : '' }}">
+                                            <label for="detail" class="{{ $errors->has('detail') ? 'col-form-label' : '' }}">Descripción (opcional)</label>
+                                            <textarea class="form-control" id="detail" rows="3" name="detail"></textarea>
+                                            @if ($errors->has('detail'))
+                                                <span class="help-block">
+                                                <small id="emailHelp" class="form-text text-danger">{{ $errors->first('detail') }}</small>
+                                            </span>
+                                            @endif
                                         </div>
-                                        <div class="form-group">
-                                            <label for="example-color-input">Slug Color</label>
-                                            <input class="form-control" type="color" value="#fcfcfcf" id="example-color-input">
-                                        </div>
+
                                         <div class="form-group">
                                             <button class="btn btn-primary">Guardar</button>
                                         </div>
@@ -95,7 +114,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>

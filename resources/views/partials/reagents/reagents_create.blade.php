@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container-fluid" ng-controller="reagents_ctrl">
+    <div class="container-fluid" ng-controller="reagents_create_ctrl">
         <div class="row justify-content-center">
             <div class="col-12 col-md-11 pt-3">
 
@@ -31,58 +31,32 @@
                                         <div class="dropdown-divider"></div>
                                     </div>
                                 </div>
+
                                 <div class="row">
-                                    <div class="col-12 col-md-6 col-lg-4">
-                                        <div class="card">
-                                            <img class="card-img-top" src="http://lorempixel.com/400/200/" alt="Card image cap">
-                                            <div class="card-block">
-                                                <h4 class="card-title">Base de datos</h4>
-                                                <p class="card-text">Al acceder podra crear nuevos reactivos bajo este materia.</p>
-                                                <ul class="list-group list-group-flush">
-                                                    <li class="list-group-item">grupos de reactivos <span class="badge badge-pill badge-info ml-2">10</span> </li>
-                                                    <li class="list-group-item">preguntas formuladas <span class="badge badge-pill badge-info ml-2">129</span></li>
-                                                    <li class="list-group-item">preguntas por correguir <span class="badge badge-pill badge-info ml-2">49</span></li>
-                                                </ul>
-                                                <div class="row">
-                                                    <div class="col-12 text-center mt-3">
-                                                        <a href="#" class="btn btn-primary">Crear reactivo</a>
+                                    <div class="col-12 col-md-6 col-lg-4 mb-4 mt-1">
+                                        <a href="">
+                                            <div class="card card-outline-primary pt-4 pb-4 text-primary">
+                                                <div class="card-block text-center">
+                                                    <h3 class="card-title">Redes</h3>
+                                                    <div class="row justify-content-center pt-3">
+                                                        <div class="col-auto mr-4">
+                                                            129 Reactivos
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <span class="alert-text">98</span>
+                                                            <i class="fa fa-bell-o" aria-hidden="true"></i>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>{{-- Contenedor para la materia --}}
-                                    <div class="col-12 col-md-6 col-lg-4">
-                                        <div class="card">
-                                            <img class="card-img-top" src="http://lorempixel.com/400/200/" alt="Card image cap">
-                                            <div class="card-block">
-                                                <h4 class="card-title">Redes</h4>
-                                                <p class="card-text">Al acceder podra crear nuevos reactivos bajo este materia.</p>
-                                                <ul class="list-group list-group-flush">
-                                                    <li class="list-group-item">grupos de reactivos <span class="badge badge-pill badge-info ml-2">10</span> </li>
-                                                    <li class="list-group-item">preguntas formuladas <span class="badge badge-pill badge-info ml-2">129</span></li>
-                                                    <li class="list-group-item">preguntas por correguir <span class="badge badge-pill badge-info ml-2">49</span></li>
-                                                </ul>
-                                                <div class="row">
-                                                    <div class="col-12 text-center mt-3">
-                                                        <a href="#" class="btn btn-primary">Crear reactivo</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-md-6 col-lg-4 align-self-center text-center p-4">
-                                        <a href="{{ route('subjects') }}">
-                                            <span class="btn btn-primary">
-                                                <i class="fa fa-plus pl-3 pr-3" aria-hidden="true"></i>
-                                            </span>
                                         </a>
                                     </div>
                                 </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
